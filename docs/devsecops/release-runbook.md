@@ -31,6 +31,19 @@ This runbook is required context for every release or production promotion to `h
 
 ## Release Log
 
+## 2026-06-23 - Docs-Only Deploy Skip
+
+- Environment: `alphasource.com.mx`
+- Source branch: `main`
+- Commit: `4c39ef6`
+- GitHub Actions run: `28060546372`
+- Change summary: Updated the main website deploy workflow so future docs-only pushes do not trigger production FTPS deploys.
+- DevSecOps checks: Workflow-file change triggered `Deploy Alpha Source Site`, which completed successfully.
+- Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Verification: GitHub Actions run `28060546372` completed successfully.
+- Rollback: Revert `4c39ef6` if documentation-only commits should deploy again.
+- Risks/follow-ups: None for current static-site deployment.
+
 ## 2026-06-23 - DevSecOps Documentation Standard
 
 - Environment: `alphasource.com.mx`
