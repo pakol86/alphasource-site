@@ -31,6 +31,19 @@ This runbook is required context for every release or production promotion to `h
 
 ## Release Log
 
+## 2026-06-27 - Brand Hero Visual Refresh
+
+- Environment: `alphasource.com.mx`
+- Source branch: `main`
+- Commit: `370bf28`
+- GitHub Actions run: `28304871128` (`https://github.com/pakol86/alphasource-site/actions/runs/28304871128`)
+- Change summary: Refined the Alpha Source brand treatment, added a generated professional AI governance hero visual, introduced WebP/JPEG image assets, and improved first-viewport hierarchy with governance/security/assurance proof points.
+- DevSecOps checks: Static diff review completed; `node --check script.js` passed; local desktop/mobile headless Chrome screenshots reviewed; first FTPS attempt timed out on the control socket, retry of the failed job completed successfully.
+- Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Verification: `https://alphasource.com.mx/` live HTML references the new hero visual and proof strip; WebP and JPEG assets return HTTP 200; live desktop screenshot captured after deployment.
+- Rollback: Revert `370bf28` and push to `main`, then confirm the deploy workflow succeeds.
+- Risks/follow-ups: Generated brand imagery should be reviewed by Francisco for tone and accuracy; future campaigns may still need dedicated photography, logo assets, and campaign-specific landing-page variants.
+
 ## 2026-06-27 - Google Translate Selector
 
 - Environment: `alphasource.com.mx`
