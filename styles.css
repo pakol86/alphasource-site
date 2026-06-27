@@ -149,6 +149,12 @@ body::before {
   border-radius: 999px;
 }
 
+.language-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .lang-btn {
   border: 0;
   background: transparent;
@@ -164,6 +170,38 @@ body::before {
 .lang-btn.is-active {
   color: #ffffff;
   background: var(--accent-deep);
+}
+
+.google-translate-shell {
+  display: flex;
+  align-items: flex-start;
+  min-height: 44px;
+  gap: 3px;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  flex-direction: column;
+}
+
+.translate-label {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.google-translate-select {
+  width: 170px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .section {
@@ -612,6 +650,11 @@ h3 {
     flex-direction: column;
   }
 
+  .language-tools {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
   .nav {
     flex-wrap: wrap;
   }
@@ -634,6 +677,14 @@ h3 {
 
   .topbar {
     margin-bottom: 18px;
+  }
+
+  .google-translate-shell {
+    min-width: 242px;
+  }
+
+  .google-translate-select {
+    width: min(220px, calc(100vw - 70px));
   }
 
   h1 {

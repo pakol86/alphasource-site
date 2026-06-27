@@ -25,6 +25,31 @@ function initGoogleAnalytics() {
 
 initGoogleAnalytics();
 
+function initGoogleTranslateLinks() {
+  const select = document.getElementById("google_translate_select");
+
+  if (!select) {
+    return;
+  }
+
+  select.addEventListener("change", () => {
+    if (!select.value) {
+      return;
+    }
+
+    const isLocalPreview = ["localhost", "127.0.0.1", "0.0.0.0"].includes(window.location.hostname);
+    const sourceUrl = isLocalPreview ? "https://alphasource.com.mx/" : window.location.href;
+    const translateUrl = new URL("https://translate.google.com/translate");
+
+    translateUrl.searchParams.set("sl", document.documentElement.lang || "en");
+    translateUrl.searchParams.set("tl", select.value);
+    translateUrl.searchParams.set("u", sourceUrl);
+
+    window.open(translateUrl.toString(), "_blank", "noopener,noreferrer");
+    select.value = "";
+  });
+}
+
 const copy = {
   en: {
     brandTag: "AI governance for real operations",
@@ -32,6 +57,8 @@ const copy = {
     navFit: "Best fit",
     navApproach: "Approach",
     navContact: "Contact",
+    translateMore: "More languages",
+    translatePlaceholder: "Google Translate",
     eyebrow: "Mexico-based boutique advisory",
     heroTitle: "Control before AI scale.",
     heroLead: "We help companies in Mexico implement the security, governance, and operating controls they need to use AI without improvisation.",
@@ -127,6 +154,8 @@ const copy = {
     navFit: "Ideal para",
     navApproach: "Enfoque",
     navContact: "Contacto",
+    translateMore: "Más idiomas",
+    translatePlaceholder: "Traducir con Google",
     eyebrow: "Boutique de asesoría en México",
     heroTitle: "Control antes de escalar la IA.",
     heroLead: "Ayudamos a empresas en México a implementar los controles de seguridad, gobernanza y operación que necesitan para usar IA sin improvisación.",
@@ -246,3 +275,4 @@ buttons.forEach((button) => {
 
 const preferred = window.localStorage.getItem("alphasource-language") || "en";
 setLanguage(preferred);
+initGoogleTranslateLinks();
