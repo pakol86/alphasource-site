@@ -15,7 +15,10 @@
   <div class="site-shell">
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Alpha Source home">
-        <span class="brand-mark">AS</span>
+        <span class="brand-mark" aria-hidden="true">
+          <span>A</span>
+          <span>S</span>
+        </span>
         <span class="brand-text">
           <strong>Alpha Source</strong>
           <span data-i18n="brandTag">AI governance for real operations</span>
@@ -71,10 +74,24 @@
             <li data-i18n="heroSignal2">Adapted to Mexico's legal and operational context</li>
             <li data-i18n="heroSignal3">Built for executive teams, security leaders, and regulated businesses</li>
           </ul>
+
+          <div class="proof-strip" aria-label="Core focus areas">
+            <span data-i18n="proofA">Governance</span>
+            <span data-i18n="proofB">Security</span>
+            <span data-i18n="proofC">Assurance</span>
+          </div>
         </div>
 
-        <aside class="hero-panel">
-          <p class="panel-label" data-i18n="panelLabel">What changes when controls come first</p>
+        <aside class="hero-visual" aria-label="AI governance operations visual">
+          <picture>
+            <source srcset="./assets/alpha-source-governance-hero.webp" type="image/webp">
+            <img src="./assets/alpha-source-governance-hero.jpg" alt="Executive AI governance operations room with security control dashboards" width="1717" height="916">
+          </picture>
+
+          <div class="hero-visual-overlay">
+            <p class="panel-label" data-i18n="panelLabel">What changes when controls come first</p>
+          </div>
+
           <div class="panel-grid">
             <article>
               <strong data-i18n="panelA">Known usage</strong>
