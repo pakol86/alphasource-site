@@ -31,6 +31,19 @@ This runbook is required context for every release or production promotion to `h
 
 ## Release Log
 
+## 2026-06-27 - Google Translate Selector
+
+- Environment: `alphasource.com.mx`
+- Source branch: `main`
+- Commit: `f8d5d0b`
+- GitHub Actions run: `28304456849` (`https://github.com/pakol86/alphasource-site/actions/runs/28304456849`)
+- Change summary: Added a header language control that keeps the curated English/Spanish copy and offers additional Google Translate page-translation links for Portuguese, French, German, Italian, Japanese, Korean, Simplified Chinese, and Traditional Chinese.
+- DevSecOps checks: Static diff review completed; `node --check script.js` passed; desktop/mobile headless Chrome screenshots reviewed; deployment workflow completed successfully.
+- Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Verification: `https://alphasource.com.mx/` returned HTTP 200 and live `index.html`, `script.js`, and `styles.css` include the new Google Translate selector assets.
+- Rollback: Revert `f8d5d0b` and push to `main`, then confirm the deploy workflow succeeds.
+- Risks/follow-ups: Google Translate output is machine-generated and not SEO-indexable localized content; use curated Spanish/English copy for primary messaging and consider dedicated localized pages if marketing campaigns require indexed multilingual landing pages.
+
 ## 2026-06-23 - Docs-Only Deploy Skip
 
 - Environment: `alphasource.com.mx`
