@@ -31,6 +31,19 @@ This runbook is required context for every release or production promotion to `h
 
 ## Release Log
 
+## 2026-07-22 - Translation Selector Usability Refresh
+
+- Environment: `alphasource.com.mx`
+- Source branch: `main`
+- Commit: `8765d95d6a01d8380155285a91574c0faddc9c71`
+- GitHub Actions run: `29959189130` (`https://github.com/pakol86/alphasource-site/actions/runs/29959189130`)
+- Change summary: Improved the header auto-translation selector with clearer English/Spanish labels, more touch-friendly styling, deterministic source-language handling, and Russian (`Русский`) as a Google Translate target language.
+- DevSecOps checks: Static diff review completed; changed-file secret scan completed; `node --check script.js` passed; local desktop/mobile Playwright screenshot checks confirmed Russian option presence and no horizontal overflow; GitHub Actions FTPS deployment completed successfully.
+- Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Verification: `https://alphasource.com.mx/` returned HTTP 200; live `index.html` includes `Auto translate`, `Choose language`, and `Русский`; live `script.js` includes updated source/target translation handling; live `styles.css` includes the refreshed selector styling.
+- Rollback: Revert `8765d95d6a01d8380155285a91574c0faddc9c71` and push to `main`, then confirm the deploy workflow succeeds.
+- Risks/follow-ups: Google Translate output remains machine-generated and non-indexable; no Google Cloud project was needed for this static-site translation flow.
+
 ## 2026-06-27 - Brand Hero Visual Refresh
 
 - Environment: `alphasource.com.mx`
