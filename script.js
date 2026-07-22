@@ -33,16 +33,19 @@ function initGoogleTranslateLinks() {
   }
 
   select.addEventListener("change", () => {
-    if (!select.value) {
+    const targetLanguage = select.value;
+
+    if (!targetLanguage) {
       return;
     }
 
     const isLocalPreview = ["localhost", "127.0.0.1", "0.0.0.0"].includes(window.location.hostname);
     const sourceUrl = isLocalPreview ? "https://alphasource.com.mx/" : window.location.href;
+    const sourceLanguage = document.documentElement.lang === "es" ? "es" : "en";
     const translateUrl = new URL("https://translate.google.com/translate");
 
-    translateUrl.searchParams.set("sl", document.documentElement.lang || "en");
-    translateUrl.searchParams.set("tl", select.value);
+    translateUrl.searchParams.set("sl", sourceLanguage);
+    translateUrl.searchParams.set("tl", targetLanguage);
     translateUrl.searchParams.set("u", sourceUrl);
 
     window.open(translateUrl.toString(), "_blank", "noopener,noreferrer");
@@ -57,8 +60,8 @@ const copy = {
     navFit: "Best fit",
     navApproach: "Approach",
     navContact: "Contact",
-    translateMore: "More languages",
-    translatePlaceholder: "Google Translate",
+    translateMore: "Auto translate",
+    translatePlaceholder: "Choose language",
     eyebrow: "Mexico-based boutique advisory",
     heroTitle: "Control before AI scale.",
     heroLead: "We help companies in Mexico implement the security, governance, and operating controls they need to use AI without improvisation.",
@@ -157,8 +160,8 @@ const copy = {
     navFit: "Ideal para",
     navApproach: "Enfoque",
     navContact: "Contacto",
-    translateMore: "Más idiomas",
-    translatePlaceholder: "Traducir con Google",
+    translateMore: "Traducir",
+    translatePlaceholder: "Elegir idioma",
     eyebrow: "Boutique de asesoría en México",
     heroTitle: "Control antes de escalar la IA.",
     heroLead: "Ayudamos a empresas en México a implementar los controles de seguridad, gobernanza y operación que necesitan para usar IA sin improvisación.",

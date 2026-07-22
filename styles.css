@@ -166,6 +166,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .lang-btn {
@@ -187,33 +188,37 @@ body::before {
 
 .google-translate-shell {
   display: flex;
-  align-items: flex-start;
-  min-height: 44px;
-  gap: 3px;
-  padding: 7px 10px;
+  align-items: center;
+  min-height: 46px;
+  gap: 8px;
+  padding: 6px 8px 6px 12px;
   background: rgba(255, 255, 255, 0.68);
   border: 1px solid var(--line);
-  border-radius: 18px;
-  flex-direction: column;
+  border-radius: 999px;
 }
 
 .translate-label {
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
+  line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .google-translate-select {
-  width: 170px;
+  width: 178px;
+  min-height: 34px;
   margin: 0;
   border: 0;
   outline: 0;
-  background: transparent;
+  border-radius: 999px;
+  background: rgba(16, 62, 69, 0.08);
   color: var(--ink);
   font: inherit;
   font-size: 0.86rem;
   font-weight: 700;
+  padding: 0 10px;
   cursor: pointer;
 }
 
@@ -758,11 +763,13 @@ h3 {
   }
 
   .google-translate-shell {
-    min-width: 242px;
+    width: 100%;
+    max-width: 360px;
+    justify-content: space-between;
   }
 
   .google-translate-select {
-    width: min(220px, calc(100vw - 70px));
+    width: min(190px, calc(100vw - 132px));
   }
 
   h1 {
