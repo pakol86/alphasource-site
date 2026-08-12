@@ -19,8 +19,8 @@ This standard applies to the Alpha Source main website.
 
 ## Change Classification
 
-- Low risk: copy or style changes to `index.html`, `styles.css`, or `script.js`.
-- Medium risk: analytics tags, forms, external links, deploy workflow exclusions, or SEO metadata.
+- Low risk: copy or style changes to React components or CSS.
+- Medium risk: analytics tags, forms, external links, dependency updates, deploy workflow exclusions, or SEO metadata.
 - High risk: cPanel credentials, deploy account scope, DNS, SSL, `.well-known/`, or anything that might affect `labs/`.
 
 ## Minimum Evidence
@@ -32,4 +32,3 @@ Each release or promotion must record:
 - Static/security review result
 - Live verification result
 - Rollback path
-

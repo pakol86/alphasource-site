@@ -1,13 +1,21 @@
 # Alpha Source Site
 
-Static marketing site for `alphasource.com.mx`.
+React marketing site for `alphasource.com.mx`, built with Vite and deployed as static assets.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+npm run build
+```
 
 ## Deployment
 
 This repository deploys to the live cPanel-hosted site for `https://alphasource.com.mx/`
 through `.github/workflows/deploy-pages.yml`.
 
-The workflow publishes the site over `FTPS` on every push to `main`.
+The workflow builds `dist/` and publishes the generated site over `FTPS` on every push to `main`.
 
 Repository secrets required by the workflow:
 
@@ -19,8 +27,8 @@ The deploy user is scoped to the addon-domain document root:
 
 - `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
 
-The workflow intentionally excludes repo metadata files and does not use a clean-slate
-delete, so remote directories such as `labs/` and `.well-known/` remain intact.
+The workflow intentionally deploys only built files and does not use a clean-slate delete,
+so remote directories such as `labs/` and `.well-known/` remain intact.
 
 ## DevSecOps Release Documentation
 

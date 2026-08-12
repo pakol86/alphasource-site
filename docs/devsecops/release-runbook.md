@@ -5,12 +5,13 @@ This runbook is required context for every release or production promotion to `h
 ## Promotion Checklist
 
 1. Confirm release scope and affected files.
-2. Review changed static assets for credentials, private notes, and unintended test content.
-3. Confirm the change does not overwrite or depend on `labs/` or `.well-known/`.
-4. Commit to `main`.
-5. Confirm the `Deploy Alpha Source Site` GitHub Actions run passes.
-6. Verify the live site at `https://alphasource.com.mx/`.
-7. Add a release entry to this file and to the GitHub wiki when the wiki is available.
+2. Run `npm run build`.
+3. Review changed source and generated static assets for credentials, private notes, and unintended test content.
+4. Confirm the change does not overwrite or depend on `labs/` or `.well-known/`.
+5. Commit to `main`.
+6. Confirm the `Deploy Alpha Source Site` GitHub Actions run passes.
+7. Verify the live site at `https://alphasource.com.mx/`.
+8. Add a release entry to this file and to the GitHub wiki when the wiki is available.
 
 ## Release Entry Template
 
@@ -30,6 +31,19 @@ This runbook is required context for every release or production promotion to `h
 ```
 
 ## Release Log
+
+## 2026-08-11 - React Framework Rebuild
+
+- Environment: `alphasource.com.mx`
+- Source branch: `main`
+- Commit: `pending`
+- GitHub Actions run: `pending deployment`
+- Change summary: Rebuilt the public website from scratch as a Vite + React application with a full-bleed brand hero, framework-backed service positioning, bilingual copy controls, Google Translate handoff, and a direct labs console entry point.
+- DevSecOps checks: Pending local build, static secret review, GitHub Actions deploy, and live verification.
+- Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Verification: Pending.
+- Rollback: Redeploy the previous known-good static-site commit or revert this release commit and rerun the deploy workflow.
+- Risks/follow-ups: Generated `dist/` assets deploy to the domain root while preserving remote `labs/` and `.well-known/`; review the live site on mobile after deployment.
 
 ## 2026-07-22 - Translation Selector Usability Refresh
 

@@ -8,6 +8,7 @@ This folder documents the operating context for the public Alpha Source marketin
 - Default branch: `main`
 - Production URL: `https://alphasource.com.mx/`
 - cPanel addon-domain root: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
+- Build framework: Vite + React
 - Deployment protocol: FTPS through GitHub Actions
 - Deploy account: `alphasourcedeploy@alphasource.com.mx`
 
@@ -19,7 +20,9 @@ Workflow:
 
 Deployment details:
 
+- Runs `npm ci` and `npm run build`
 - Uses `SamKirkland/FTP-Deploy-Action@v4.4.0`
+- Deploys generated `dist/` assets
 - Protocol: `ftps`
 - Port: `21`
 - Remote directory: `./`
@@ -47,4 +50,3 @@ Every release or production promotion must add a release entry to `release-runbo
 - Risks or follow-ups
 
 Raw passwords, tokens, and deploy secrets must never be written into repo files, wiki pages, issues, project cards, or memory files.
-
