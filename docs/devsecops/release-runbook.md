@@ -36,14 +36,14 @@ This runbook is required context for every release or production promotion to `h
 
 - Environment: `alphasource.com.mx`
 - Source branch: `main`
-- Commit: `pending`
-- GitHub Actions run: `pending deployment`
+- Commit: `486e9478d941e19e297b70b1540e5b1917cf1a93`
+- GitHub Actions run: `31551142187` (`https://github.com/pakol86/alphasource-site/actions/runs/31551142187`)
 - Change summary: Rebuilt the public website from scratch as a Vite + React application with a full-bleed brand hero, framework-backed service positioning, bilingual copy controls, Google Translate handoff, and a direct labs console entry point.
-- DevSecOps checks: Pending local build, static secret review, GitHub Actions deploy, and live verification.
+- DevSecOps checks: Local `npm run build` passed; Playwright screenshot smoke checks passed for desktop and mobile with no horizontal overflow; static secret scan found only expected GitHub secret variable names in docs/workflow files; GitHub Actions FTPS deploy completed successfully.
 - Deployment target: `/home/vg6jiosnhg3v/public_html/alphasource.com.mx`
-- Verification: Pending.
+- Verification: Local Vite desktop/mobile browser screenshots rendered the React site correctly and the build includes the imported hero asset in `dist/assets/`. Public curl/headless-browser checks to `https://alphasource.com.mx/` currently return the hosting `One moment, please...` verification interstitial, so live public content verification is blocked by hosting-side request verification rather than the build.
 - Rollback: Redeploy the previous known-good static-site commit or revert this release commit and rerun the deploy workflow.
-- Risks/follow-ups: Generated `dist/` assets deploy to the domain root while preserving remote `labs/` and `.well-known/`; review the live site on mobile after deployment.
+- Risks/follow-ups: Generated `dist/` assets deploy to the domain root while preserving remote `labs/` and `.well-known/`; review the live site from a normal browser session if the hosting interstitial persists for automated checks.
 
 ## 2026-07-22 - Translation Selector Usability Refresh
 
